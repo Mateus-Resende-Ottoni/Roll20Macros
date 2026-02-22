@@ -1,0 +1,41 @@
+
+Para os macros funcionarem, a ficha do personagem sendo utilizada tem que possuir esses atributos configurados
+(Esses são atributos para personagens. NPC podem ser bem simplificados)
+
+Básicos:
+- nivel
+- classe {Valor numérico, não escrito}
+- forca
+- destreza
+- constituicao
+- inteligencia
+- sabedoria
+- carisma
+- vidaPorNivel
+- energiaPorNivel
+
+Básicos derivados:
+- mod_forca             = [[floor((@{forca}-10)/2)]]
+- mod_destreza          = [[floor((@{destreza}-10)/2)]]
+- mod_constituicao      = [[floor((@{constituicao}-10)/2)]]
+- mod_inteligencia      = [[floor((@{inteligencia}-10)/2)]]
+- mod_sabedoria         = [[floor((@{sabedoria}-10)/2)]]
+- mod_carisma           = [[floor((@{carisma}-10)/2)]]
+- proficiencia_bonus    = [[floor((@{nivel}-1)/4) + 2]]
+- vida {Máximo}         = [[((1+@{nivel})*@{vidaPorNivel}) + (@{nivel}*@{mod_constituicao}) + @{outros_vida}]]
+- energia {Máximo}      = [[((@{nivel})*@{energiaPorNivel})[Energia da classe] + ({{@{selected|classe}, 0}=3}*@{tecnica_atributo})[Energia inicial] + @{outros_energia}[Outros bônus] ]]
+- defesa                = [[10 + @{mod_destreza} + @{outros_defesa}]]
+
+Maestrias:
+
+Escolhas: Esses valores são exatamente os valores de outros atributos, mas devem ser decididos pelo jogador
+- tecnica_atributo
+- tecnica_pericia
+
+Outros: Esses se referem a bônus gerais que afetam os atributos e seus respectivos valores/fórmulas
+- outros_vida
+- outros_energia
+- outros_defesa
+
+
+
