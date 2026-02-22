@@ -18,6 +18,14 @@ Existem coisas que podem ser referenciadas independentemente do atributo existir
 - token_name
 - token_id
 
+## Referenciando valor máximo
+
+Para determinados valores, é interessante tanto ter uma noção do valor atual quanto do valor máximo.
+Para acessar o valor máximo desse, basta adicionar um |max ao fim, assim referenciando o valor máximo desse.
+
+@{selected|vida}[Valor Atual] e @{selected|vida|max}[Vida Máxima]
+
+
 # Comandos
 
 /em: É basicamente uma ação, sempre sendo precedido pelo nome do personagem selecionado. ('em' vem de emote)
@@ -71,13 +79,18 @@ Se houver várias barras verticais, é possível escolher dentre diversas opçõ
 
 Se não houver barras verticais
 
+## Escolhas automáticas
+
+Uma chaves pode ser sucedida com determinadas siglas para automaticamente fazer escolhas entre dois valores que foram separados com ,
+Exemplo: {Valor1, Valor2}kh1
+
+- kh1: Keep Higher One/Manter o Maior
+
 # Nomear valores
 
 Suceder um valor com um nome entre chaves permite que esse seja nomeado nos resultados para melhor identificação e clareza
-Ex:
-```rmacro
-@{selected|proficiencia_bonus}[Bônus de Proficiência]
-```
+Exemplo: @{selected|proficiencia_bonus}[Bônus de Proficiência]
+
 
 # Links
 
